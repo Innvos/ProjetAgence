@@ -1,3 +1,10 @@
+const params = new URLSearchParams(window.location.search);
+
+// On récupère chaque paramètre
+const voyage= params.get("name");
+
+console.log(voyage)
+
 // --VERIF + CALCUL PRIX-- //
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -51,8 +58,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const enfants = parseInt(nbEnfants.value);
         const petitDej = [...radios].find(r => r.checked).value === "oui";
 
-        const prixAdulte = 100 * adultes * jours;
-        const prixEnfant = 100 * 0.4 * enfants * jours;
+        const prixAdulte = price * adultes * jours;
+        const prixEnfant = price * 0.4 * enfants * jours;
         const prixPetitDej = petitDej ? 15 * (adultes + enfants) * jours : 0;
 
         const total = prixAdulte + prixEnfant + prixPetitDej;
