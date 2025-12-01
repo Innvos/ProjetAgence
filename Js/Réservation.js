@@ -5,6 +5,21 @@ const voyage= params.get("name");
 
 console.log(voyage)
 
+lstvoyage={'Algerie':'179',
+    'Copenhagen':'56',
+    'Londres':'143' ,
+    'Malte':'89' ,
+    'NewYork':'27' ,
+    'Pyongyang':'160' ,
+    'quebec':'103' ,
+    'Seoul':'147' ,
+    'Shangai':'63' ,
+    'Tokyo':'198' ,
+    'Varsovie':'121' ,
+    'WashintonDC':'74' ,
+    'NewZeland':'32' }
+PRIX=lstvoyage[voyage]
+
 // --VERIF + CALCUL PRIX-- //
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -58,8 +73,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const enfants = parseInt(nbEnfants.value);
         const petitDej = [...radios].find(r => r.checked).value === "oui";
 
-        const prixAdulte = price * adultes * jours;
-        const prixEnfant = price * 0.4 * enfants * jours;
+        const prixAdulte = PRIX * adultes * jours;
+        const prixEnfant = PRIX * 0.4 * enfants * jours;
         const prixPetitDej = petitDej ? 15 * (adultes + enfants) * jours : 0;
 
         const total = prixAdulte + prixEnfant + prixPetitDej;
