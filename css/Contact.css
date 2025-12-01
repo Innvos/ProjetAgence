@@ -93,3 +93,12 @@ h1, h2 {
   color: white;
   margin-top: 90px;       /* Ajusté pour le nouveau header */
 }
+
+/* FOOTER */
+footer {
+  margin-top: 40px;
+  padding: 20px 0;
+  text-align: center;
+  color: #ddd;
+  font-size: 18px;
+}

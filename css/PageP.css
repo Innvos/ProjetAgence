@@ -135,6 +135,10 @@ h1, h2 {
   transition: 0.2s ease;
 }
 
+div.numbertext{
+  color:#fff
+}
+
 .prev {
   left: 0px;
 }
