@@ -26,7 +26,6 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
 
   let titleElement = document.querySelector(".container h2");
   titleElement.textContent = dots[slideIndex - 1].alt;
