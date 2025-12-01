@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   <header>
     <div class="header-inner">
       <div class="logo">
-        <h1>Paf All'Air</h1>
+        <h1>Wak'Full Air</h1>
       </div>
 
       <nav class="main-nav" aria-label="Main navigation">
