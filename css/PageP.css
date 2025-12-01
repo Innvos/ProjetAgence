@@ -100,7 +100,7 @@ h1, h2 {
 .container {
   position: relative;
   margin: 110px auto 50px auto; /* descend sous le menu */
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(63, 63, 63, 0.6);
   border: 2px solid #fff;
   padding: 20px;
   width: 90%;
@@ -127,7 +127,7 @@ h1, h2 {
   top: 50%;
   padding: 16px;
   font-size: 24px;
-  color: rgb(255, 0, 217);
+  color: rgb(255, 0, 0);
   font-weight: bold;
   user-select: none;
   border-radius: 8px;
@@ -136,15 +136,15 @@ h1, h2 {
 }
 
 .prev {
-  left: 0;
+  left: 0px;
 }
 
 .next {
-  right: 0;
+  right: 0px;
 }
 
 .prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(83, 83, 83, 0.7);
 }
 
 /* MINI IMAGES */
