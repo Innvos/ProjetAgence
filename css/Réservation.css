@@ -1,0 +1,41 @@
+img {
+    width:100%;
+}
+img.panier{
+    width:95%;
+}
+a {
+    text-decoration: None;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+div.fondhead{
+  background-color: #a095dec5;
+    margin:-20px -8px auto;
+    padding:10px;
+    display: flex;
+    justify-content: center;
+}
+
+header {
+  display: flex;
+  gap: 100px;
+  font-weight: bold;
+  font-size: 1.2em;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  width:60px;
+}
+
+/* Effet hover */
+div p:hover {
+  background-color: #ff7f7f;
+  border-radius: 8px;
+  padding: 3px 3px;
+    
+}

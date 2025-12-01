@@ -1,0 +1,201 @@
+/* GLOBAL */
+* {
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+}
+
+/* BACKGROUND */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../Images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(3px) brightness(0.6);
+  z-index: -1; /* Derrière tout */
+}
+
+/* HEADER FIXE */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(45, 35, 90, 0.9);
+  height: 42px;              /* Hauteur réduite */
+  padding: 0;                /* Pas de padding vertical inutile */
+  display: flex;
+  align-items: center;       /* Centre verticalement */
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.header-inner {
+  width: 92%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;               /* Assure le centrage vertical parfait */
+}
+
+.logo h1 {
+  font-size: 1.25rem;         /* Taille réduite et harmonieuse */
+  color: white;
+  margin: 0;
+  line-height: 1;             /* Pour un alignement parfait */
+}
+
+/* NAVIGATION */
+nav.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+nav.main-nav a {
+  text-decoration: none;
+  font-weight: 700;
+  color: white;
+  padding: 4px 10px;          /* Réduction du padding */
+  border-radius: 8px;
+  display: flex;
+  align-items: center;         /* Centre les icônes */
+  gap: 4px;
+  transition: 0.2s ease;
+  font-size: 0.85rem;          /* Taille parfaite */
+}
+
+nav.main-nav a:hover {
+  background-color: rgb(255, 153, 121);
+  transform: translateY(-2px);
+}
+
+/* Icône panier mieux alignée */
+.panier img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+/* TITRES */
+h1, h2 {
+  text-align: center;
+  color: white;
+  margin-top: 90px;       /* Ajusté pour le nouveau header */
+}
+
+/* CARROUSEL */
+.container {
+  position: relative;
+  margin: 110px auto 50px auto; /* descend sous le menu */
+  background-color: rgba(0,0,0,0.6);
+  border: 2px solid #fff;
+  padding: 20px;
+  width: 90%;
+  max-width: 1100px;
+  z-index: 5;
+  border-radius: 15px;
+}
+
+.mySlides {
+  display: none;
+}
+
+.image {
+  width: 100%;
+  max-height: 550px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* BOUTONS PREV / NEXT */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  font-size: 24px;
+  color: rgb(255, 0, 217);
+  font-weight: bold;
+  user-select: none;
+  border-radius: 8px;
+  transform: translateY(-50%);
+  transition: 0.2s ease;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.7);
+}
+
+/* MINI IMAGES */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+  justify-content: center;
+}
+
+.column {
+  width: calc(100% / 7 - 10px);
+  min-width: 90px;
+}
+
+.imgPetit {
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.2s;
+}
+
+.imgPetit:hover,
+.active {
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+/* FOOTER */
+footer {
+  margin-top: 40px;
+  padding: 20px 0;
+  text-align: center;
+  color: #ddd;
+  font-size: 18px;
+}
+
+@media (max-width: 720px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav.main-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .column {
+    width: calc(100% / 3 - 10px);
+  }
+}

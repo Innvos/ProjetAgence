@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/PageP.css">
+    <title>Réservation</title>
+</head>
+<body>
+    <h1>Réservation</h1>
+    <header>
+
+    </header>
+
+    <form action="ContenuPanier.html" method="get">
+  <ul>
+    <li>
+<label for="start">Date de départ :</label>
+<input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
+    </li>
+    <li>
+<label for="start">Date de retour :</label>
+<input type="date" id="retour" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
+    </li>
+    <li>
+      <label for="NbAdultes">Nombre d'adultes&nbsp;:</label>
+      <input type="number" id="NbAdultes" NbAdultes="" min = 1/>
+    </li>
+    <li>
+      <label for="NbEnfant">Nombre d'enfants (-12 ans)&nbsp;:</label>
+      <input type="number" id="NbEnfant" NbEnfant="" min = 0 />
+    </li>
+    <li>
+      <label for="NbEnfant">Petit Déjeuner ?&nbsp;:</label>
+      <input type="radio" name = 'oui/non' value = 'oui' checked > Oui
+      <input type="radio" name = 'oui/non' value = 'non' checked > Non
+    </li>
+    <li>Prix calculé : </li>
+    <input type = "Submit" value = "Valider la Réservation">
+  </ul>
+</form>
+
+        <li><a href="PageP.html">Retour Menu</a></li>
+        <li><a href="ContenuPanier.html">Contenu du panier</a></li>
+  <footer>
+    <p>&copy; 2025 - Agence de voyage</p>
+  </footer>
+</body>
+</html>

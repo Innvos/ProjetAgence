@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<div class = 'fondhead'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='Js/Réservation.js' defer></script>
+    <link rel="stylesheet" href="css/Réservation.css">
+    <title>Réservation</title>
+</head>
+<body>
+  <div class = 'headR'>
+    <h1>Réservation </h1>
+    <header>
+        <p><a href="PageP.html"><img src="Images/main.png" alt="">Menu</a></p>
+        <p><a href="ContenuPanier.html"><img class = 'panier' src="Images/panier.png" alt="" >Panier</a></p>
+    </header>
+</div>
+</div>
+    <form action="ContenuPanier.html" method="get">
+  <ul>
+    <li>
+<label for="start">Date de départ :</label>
+<input type="date" id="start" name="trip-start" value="2025-12-20" min="2025-12-20" max="2026-12-31" />
+    </li>
+    <li>
+<label for="start">Date de retour :</label>
+<input type="date" id="retour" name="trip-start" value="2025-12-20" min="2025-12-20" max="2027-01-01" />
+    </li>
+    <li>
+      <label for="NbAdultes">Nombre d'adultes&nbsp;:</label>
+      <input type="number" id="NbAdultes" NbAdultes="" min = 1 value="1"/>
+    </li>
+    <li>
+      <label for="NbEnfant">Nombre d'enfants (-12 ans)&nbsp;:</label>
+      <input type="number" id="NbEnfant" NbEnfant="" min = 0 value="0"/>
+    </li>
+    <li>
+      <label for="NbEnfant">Petit Déjeuner ?&nbsp;:</label>
+      <input type="radio" name = 'oui/non' value = 'oui' checked > Oui
+      <input type="radio" name = 'oui/non' value = 'non' > Non
+    </li>
+    <div id="prix" style="font-weight: bold; margin-top: 10px;">Prix : --</div>
+    <input type = "Submit" value = "Valider la Réservation">
+  </ul>
+</form>
+
+  <footer>
+    <p>&copy; 2025 - Agence de voyage</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,68 @@
+BALISES HTML ESSENTIELLES ET AVANCÉES
+
+<!DOCTYPE html> : Indique le type de document (HTML5).
+<html> : Racine d’un document HTML.
+<head> : Contient les métadonnées du document (titre, liens CSS, scripts, etc.).
+<meta> : Fournit des métadonnées (charset, description, viewport...).
+<title> : Définit le titre de la page (onglet du navigateur).
+<link> : Lien vers des fichiers externes (CSS, favicon, etc.).
+<style> : Contient du CSS directement dans le HTML.
+<script> : Contient ou relie du JavaScript.
+
+
+
+<body> : Contient le contenu visible de la page.
+<header> : En-tête de la page ou d’une section.
+<nav> : Barre de navigation.
+<section> : Définit une section de contenu.
+<article> : Contenu indépendant (article de blog, etc.).
+<aside> : Contenu secondaire (barre latérale).
+<footer> : Pied de page.
+
+<h1> à <h6> : Titres de différentes tailles.
+<p> : Paragraphe de texte.
+<br> : Retour à la ligne.
+<hr> : Ligne horizontale de séparation.
+
+<strong> : Texte important (gras).
+<em> : Texte mis en emphase (italique).
+<span> : Conteneur en ligne (styling ou ciblage avec CSS/JS).
+<div> : Conteneur en bloc (pour structurer et styliser).
+
+<a href="..."> : Lien hypertexte.
+<img src="..." alt="..."> : Image.
+<figure> : Encapsule une image et sa légende.
+<figcaption> : Légende d’une image.
+
+<ul> : Liste non ordonnée.
+<ol> : Liste ordonnée.
+<li> : Élément de liste.
+
+<table> : Tableau.
+<tr> : Ligne du tableau.
+<td> : Cellule du tableau.
+<th> : Cellule d’en-tête.
+<thead> : Regroupe l’en-tête du tableau.
+<tbody> : Regroupe le corps du tableau.
+<tfoot> : Pied du tableau.
+
+<form> : Formulaire.
+<input> : Champ de saisie.
+<textarea> : Zone de texte.
+<select> : Liste déroulante.
+<option> : Option dans une liste.
+<button> : Bouton cliquable.
+<label> : Étiquette pour un champ.
+<fieldset> : Groupe de champs.
+<legend> : Titre d’un groupe de champs.
+
+<video> : Vidéo intégrée.
+<audio> : Audio intégré.
+<source> : Source média pour vidéo/audio.
+<iframe> : Intégrer une page externe (YouTube, Google Maps…).
+
+<canvas> : Zone graphique dessinée avec JavaScript.
+<svg> : Graphique vectoriel.
+
+<!-- ... --> : Commentaire en HTML.
+
