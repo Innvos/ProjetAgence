@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const nbEnfants = document.getElementById("NbEnfant");
   const priceContainer = document.getElementById("prix");
 
-  // choisir le voyage — fallback si absent
+  // choisir le voyage
   let selected = lstvoyage[voyageKey] ? voyageKey : null;
   let displayName = selected ? lstvoyage[selected].label : "Votre voyage";
   let basePrice = selected ? lstvoyage[selected].price : 100; // fallback prix
@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // calcul initial
   calculPrix();
 
-  // soumission : validation finale
+  // Validation finale
   form.addEventListener('submit', (e) => {
     const depart = new Date(dateDepart.value);
     const retour = new Date(dateRetour.value);
