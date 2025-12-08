@@ -1,91 +1,136 @@
+/* Réservation.css - style du bloc et formulaire */
 
-
-/* FOOTER */
-footer {
-  margin-top: 40px;
-  padding: 20px 0;
-  text-align: center;
-  color: #ddd;
-  font-size: 18px;
+/* Background global (si tu veux image globale, sinon supprime) */
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
 }
 
+/* Page title */
+#page-title {
+  text-align: center;
+  color: white;
+  margin-top: 90px; /* laisse la place au header fixe */
+  font-family: 'Courier New', monospace;
+}
 
-/* Bloc de réservation avec image en fond */
+/* Bloc de réservation avec image en fond (centrée) */
 .reservation-background {
-    width: 80%;
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 40px;
+    width: 90%;
+    max-width: 960px;
+    margin: 30px auto 60px auto;
+    padding: 30px;
     border-radius: 15px;
 
-    background-size: cover;        /* L’image couvre tout */
-    background-position: center;   /* Bien centrée */
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    background-color: rgba(0,0,0,0.5); /* Sécurité si pas d'image */
+    background-color: rgba(0,0,0,0.45); /* fallback si pas d'image */
+
     display: flex;
     justify-content: center;
     align-items: center;
+
+    /* overlay sombre pour lisibilité */
+    position: relative;
+    overflow: hidden;
 }
 
-/* Fond général */
-body {
-    backdrop-filter: blur(3px);
-    color: white;
-    font-family: 'Courier New', monospace;
+/* overlay (assure lisibilité du formulaire) */
+.reservation-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 0;
+  border-radius: 15px;
 }
 
-/* Formulaire */
+/* Formulaire placé au-dessus de l'overlay */
 form {
-    width: 80%;
-    max-width: 650px;
-    margin: 40px auto;
-    background: rgba(0,0,0,0.6);
-    padding: 25px;
-    border-radius: 15px;
-    border: 2px solid white;
-    backdrop-filter: blur(5px);
+    width: 100%;
+    max-width: 660px;
+    margin: 0;
+    background: rgba(255,255,255,0.06);
+    padding: 22px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.12);
+    backdrop-filter: blur(4px);
+    color: white;
+    z-index: 1; /* au-dessus de l'overlay */
+    font-family: 'Courier New', monospace;
 }
 
 form ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 form li {
-    margin-bottom: 18px;
+    margin-bottom: 14px;
 }
 
 label {
-    font-weight: bold;
-    font-size: 1.1rem;
+    display: inline-block;
+    font-weight: 700;
+    margin-bottom: 6px;
+    font-size: 0.98rem;
 }
 
 input[type="date"],
-input[type="number"],
-input[type="radio"] {
-    margin-top: 5px;
+input[type="number"] {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(0,0,0,0.25);
+    color: white;
 }
 
-/* Bouton */
+input[type="radio"] {
+    margin-right: 6px;
+}
+
 input[type="submit"] {
     width: 100%;
     padding: 12px;
     border-radius: 10px;
     border: none;
-    background: rgb(255, 153, 121);
+    background: linear-gradient(90deg, rgba(255,153,121,1), rgba(255,120,95,1));
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.05rem;
+    font-weight: 700;
     cursor: pointer;
-    transition: 0.2s;
+    transition: transform .15s ease, filter .15s ease;
 }
 
 input[type="submit"]:hover {
-    transform: scale(1.03);
-    background-color: rgb(255, 120, 95);
+    transform: translateY(-2px);
+    filter: brightness(1.03);
 }
 
 /* Prix */
 #prix {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     color: #ffddaa;
-    margin-bottom: 15px;
+}
+
+/* Footer simple */
+footer {
+  margin-top: 20px;
+  padding: 20px 0;
+  text-align: center;
+  color: #ddd;
+  font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .reservation-background {
+    padding: 18px;
+    margin: 18px;
+  }
+  #page-title { margin-top: 110px; }
 }
