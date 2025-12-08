@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const voyageParam = params.get("name") || params.get("voyage") || ""; // accept both
   const voyageKey = voyageParam.trim();
 
-  // Liste des prix (/jour) et noms d'affichage si besoin
+  // Liste des prix (/jour)
   const lstvoyage = {
     'Algerie': { price: 179, label: 'Algérie' },
     'Copenhagen': { price: 56, label: 'Copenhague' },
@@ -37,8 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // choisir le voyage
   let selected = lstvoyage[voyageKey] ? voyageKey : null;
   let displayName = selected ? lstvoyage[selected].label : "Votre voyage";
-  let basePrice = selected ? lstvoyage[selected].price : 100; // fallback prix
-
+  let basePrice = selected ? lstvoyage[selected].price : 100;
   // met à jour titre et background si un voyage connu est fourni
   if (selected) {
     titleEl.textContent = `Réservation – ${displayName}`;
@@ -50,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     titleEl.textContent = `Réservation`;
     voyageInput.value = "";
-    // pas d'image si pas de param
+
   }
 
   // Validation + calcul
@@ -120,9 +119,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (selected && !voyageInput.value) {
       voyageInput.value = selected;
     }
-
-    // le formulaire peut soumettre normalement vers ContenuPanier.html
-    // si tu veux, on peut sérialiser et rediriger via JS à la place
   });
 
 });
