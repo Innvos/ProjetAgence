@@ -1,35 +1,48 @@
-const params = new URLSearchParams(window.location.search);
+// Réservation.js — gérer affichage dynamique + calcul de prix + validation
 
-// On récupère chaque paramètre
-const voyage= params.get("name");
+document.addEventListener("DOMContentLoaded", () => {
+  // Récupère param ?name=...
+  const params = new URLSearchParams(window.location.search);
+  const voyageParam = params.get("name") || params.get("voyage") || ""; // accept both
+  const voyageKey = voyageParam.trim();
 
-console.log(voyage)
+  // Liste des prix (/jour) et noms d'affichage si besoin
+  const lstvoyage = {
+    'Algerie': { price: 179, label: 'Algérie' },
+    'Copenhagen': { price: 56, label: 'Copenhague' },
+    'Londres': { price: 143, label: 'Londres' },
+    'Malte': { price: 89, label: 'Malte' },
+    'NewYork': { price: 27, label: 'New York' },
+    'Pyongyang': { price: 160, label: 'Pyongyang' },
+    'quebec': { price: 103, label: 'Québec' },
+    'Seoul': { price: 147, label: 'Séoul' },
+    'Shangai': { price: 63, label: 'Shanghaï' },
+    'Tokyo': { price: 198, label: 'Tokyo' },
+    'Varsovie': { price: 121, label: 'Varsovie' },
+    'WashintonDC': { price: 74, label: 'Washington DC' },
+    'NewZeland': { price: 32, label: 'Nouvelle-Zélande' }
+  };
 
-lstvoyage={'Algerie':'179',
-    'Copenhagen':'56',
-    'Londres':'143' ,
-    'Malte':'89' ,
-    'NewYork':'27' ,
-    'Pyongyang':'160' ,
-    'quebec':'103' ,
-    'Seoul':'147' ,
-    'Shangai':'63' ,
-    'Tokyo':'198' ,
-    'Varsovie':'121' ,
-    'WashintonDC':'74' ,
-    'NewZeland':'32' }
-PRIX=lstvoyage[voyage]
+  // éléments DOM
+  const titleEl = document.getElementById("page-title");
+  const bgEl = document.getElementById("reservation-bg");
+  const voyageInput = document.getElementById("voyageInput");
+  const form = document.getElementById("reservation-form");
+  const dateDepart = document.getElementById("start");
+  const dateRetour = document.getElementById("retour");
+  const nbAdultes = document.getElementById("NbAdultes");
+  const nbEnfants = document.getElementById("NbEnfant");
+  const priceContainer = document.getElementById("prix");
 
-// --VERIF + CALCUL PRIX-- //
-document.addEventListener('DOMContentLoaded', function () {
+  // choisir le voyage — fallback si absent
+  let selected = lstvoyage[voyageKey] ? voyageKey : null;
+  let displayName = selected ? lstvoyage[selected].label : "Votre voyage";
+  let basePrice = selected ? lstvoyage[selected].price : 100; // fallback prix
 
-    const form = document.querySelector('form');
-    const dateDepart = document.getElementById('start');
-    const dateRetour = document.getElementById('retour');
-    const nbAdultes = document.getElementById('NbAdultes');
-    const nbEnfants = document.getElementById('NbEnfant');
-    const radios = document.querySelectorAll('input[name="oui/non"]');
-    const priceContainer = document.getElementById('prix');
+  // met à jour titre et background si un voyage connu est fourni
+  if (selected) {
+    titleEl.textContent = `Réservation – ${displayName}`;
+    voyageInput.value = selected;
 
     // applique l'image en background du bloc - vérifie chemin image
     const imgPath = `Images/${selected}.avif`;
