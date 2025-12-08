@@ -9,13 +9,22 @@ footer {
   font-size: 18px;
 }
 
-/* Bannière image du voyage */
-.banniere-voyage {
-    width: 100%;
-    object-fit: cover;
-    filter: brightness(0.8);
-    margin-top: 60px; /* pour ne pas recouvrir ton header */
-    border-bottom: 3px solid white;
+
+/* Bloc de réservation avec image en fond */
+.reservation-background {
+    width: 80%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 15px;
+
+    background-size: cover;        /* L’image couvre tout */
+    background-position: center;   /* Bien centrée */
+    background-repeat: no-repeat;
+    background-color: rgba(0,0,0,0.5); /* Sécurité si pas d'image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Fond général */

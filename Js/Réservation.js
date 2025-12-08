@@ -99,7 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (voyage) {
         // Met à jour le titre
         document.querySelector("h1").textContent = "Réservation – " + voyage;
-
         // Met l'image en haut
         const img = document.createElement("img");
         img.src = "Images/" + voyage + ".avif";
