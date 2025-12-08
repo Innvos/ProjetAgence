@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const voyageParam = params.get("name") || params.get("voyage") || ""; // accept both
   const voyageKey = voyageParam.trim();
 
-  // Liste des prix (/jour) et noms d'affichage si besoin
+  // Liste des prix (/jour) et noms
   const lstvoyage = {
     'Algerie': { price: 179, label: 'Algérie' },
     'Copenhagen': { price: 56, label: 'Copenhague' },
