@@ -91,3 +91,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     calculPrix();
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    const voyage = params.get("name"); // Récupère le nom ex: "Algerie"
+
+    if (voyage) {
+        // Met à jour le titre
+        document.querySelector("h1").textContent = "Réservation – " + voyage;
+
+        // Met l'image en haut
+        const img = document.createElement("img");
+        img.src = "Images/" + voyage + ".avif";
+        img.classList.add("banniere-voyage");
+        document.body.prepend(img);
+    }
+});

@@ -8,3 +8,75 @@ footer {
   color: #ddd;
   font-size: 18px;
 }
+
+/* Bannière image du voyage */
+.banniere-voyage {
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+    margin-top: 60px; /* pour ne pas recouvrir ton header */
+    border-bottom: 3px solid white;
+}
+
+/* Fond général */
+body {
+    backdrop-filter: blur(3px);
+    color: white;
+    font-family: 'Courier New', monospace;
+}
+
+/* Formulaire */
+form {
+    width: 80%;
+    max-width: 650px;
+    margin: 40px auto;
+    background: rgba(0,0,0,0.6);
+    padding: 25px;
+    border-radius: 15px;
+    border: 2px solid white;
+    backdrop-filter: blur(5px);
+}
+
+form ul {
+    list-style: none;
+}
+
+form li {
+    margin-bottom: 18px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+input[type="date"],
+input[type="number"],
+input[type="radio"] {
+    margin-top: 5px;
+}
+
+/* Bouton */
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: rgb(255, 153, 121);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+input[type="submit"]:hover {
+    transform: scale(1.03);
+    background-color: rgb(255, 120, 95);
+}
+
+/* Prix */
+#prix {
+    font-size: 1.2rem;
+    color: #ffddaa;
+    margin-bottom: 15px;
+}
