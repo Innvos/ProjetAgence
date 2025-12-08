@@ -34,10 +34,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const nbEnfants = document.getElementById("NbEnfant");
   const priceContainer = document.getElementById("prix");
 
-  // choisir le voyage
+  // choisir le voyage — fallback si absent
   let selected = lstvoyage[voyageKey] ? voyageKey : null;
   let displayName = selected ? lstvoyage[selected].label : "Votre voyage";
-  let basePrice = selected ? lstvoyage[selected].price : 100;
+  let basePrice = selected ? lstvoyage[selected].price : 100; // fallback prix
 
   // met à jour titre et background si un voyage connu est fourni
   if (selected) {
