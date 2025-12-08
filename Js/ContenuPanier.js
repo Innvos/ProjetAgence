@@ -1,6 +1,6 @@
 const params = new URLSearchParams(window.location.search);
 
-// On récupère chaque paramètre
+// On récupère chaque paramètres
 const tripStart = params.get("trip-start");
 const tripEnd = params.get("trip-end");
 const nbAdultes = params.get("NbAdultes");
