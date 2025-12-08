@@ -12,11 +12,17 @@
     <title>Réservation</title>
 </head>
 <body>
-  
-    <h1>Réservation </h1>
+  <!-- background global (optionnel si tu en utilises un ailleurs) -->
+  <div class="background"></div>
 
-</div>
-</div>
+  <!-- Titre : mis à jour dynamiquement par le JS -->
+  <h1 id="page-title">Réservation</h1>
+
+  <!-- Bloc avec image de la destination en fond -->
+  <div class="reservation-background" id="reservation-bg">
+    <form id="reservation-form" action="ContenuPanier.html" method="get" novalidate>
+      <!-- on passe le voyage aussi au back via hidden -->
+      <input type="hidden" name="voyage" id="voyageInput" value="">
     <form action="ContenuPanier.html" method="get">
   <ul>
     <li>
@@ -44,9 +50,11 @@
     <input type = "Submit" value = "Valider la Réservation">
   </ul>
 </form>
+</div>
 
   <footer>
     <p>&copy; 2025 - Agence de voyage</p>
   </footer>
+
 </body>
 </html>
