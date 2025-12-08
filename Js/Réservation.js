@@ -5,12 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const voyageParam = params.get("name") || params.get("voyage") || ""; // accept both
   const voyageKey = voyageParam.trim();
-
-<<<<<<< HEAD
-  // Liste des prix (/jour)
-=======
-  // Liste des prix (/jour) et noms
->>>>>>> bdc78cbead1cd66653ccbbceaf1d9c7ce5798eb3
+  
   const lstvoyage = {
     'Algerie': { price: 179, label: 'Algérie' },
     'Copenhagen': { price: 56, label: 'Copenhague' },
