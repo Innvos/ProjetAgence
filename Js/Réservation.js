@@ -4,10 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const voyageParam = params.get("name") || params.get("voyage") || ""; 
   const voyageKey = voyageParam.trim();
 
-  // Liste des voyages avec prix et options
+// Liste des voyages (Mêmes noms EXACTS que les fichiers images et PageP.js)
   const lstvoyage = {
-    'Alger':      { price: 179, label: 'Alger', petitDejOk: true, enfantsOk: true },
-    'Copenhagen':   { price: 56,  label: 'Copenhaguen', petitDejOk: true, enfantsOk: true },
+    'Alger':        { price: 179, label: 'Alger', petitDejOk: true, enfantsOk: true },
+    'Copenhagen':   { price: 56,  label: 'Copenhague', petitDejOk: true, enfantsOk: true },
     'Londres':      { price: 143, label: 'Londres', petitDejOk: false, enfantsOk: true },
     'Malte':        { price: 89,  label: 'Malte', petitDejOk: true, enfantsOk: false }, 
     'NewYork':      { price: 27,  label: 'New York', petitDejOk: false, enfantsOk: true },
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     'Shangai':      { price: 63,  label: 'Shanghaï', petitDejOk: false, enfantsOk: false },
     'Tokyo':        { price: 198, label: 'Tokyo', petitDejOk: true, enfantsOk: true },
     'Varsovie':     { price: 121, label: 'Varsovie', petitDejOk: true, enfantsOk: true },
-    'WashintonDC':  { price: 74,  label: 'Washington DC', petitDejOk: false, enfantsOk: true },
+    'WashintonDC':  { price: 74,  label: 'Washington DC', petitDejOk: false, enfantsOk: true }, 
     'NewZeland':    { price: 32,  label: 'Nouvelle-Zélande', petitDejOk: true, enfantsOk: true }
   };
 

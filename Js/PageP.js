@@ -14,21 +14,22 @@ class Destination {
     }
 }
 
+// DONNÉES
 // 2. DONNÉES
 const destinations = [
-    new Destination(1, "Alger", 179, "Images/Alger.avif", true, true, "Alger"),
-    new Destination(2, "Copenhaguen", 56, "Images/Copenhagen.avif", true, true, "Copenhagen"),
+    new Destination(1, "Alger", 179, "Images/Alger.avif", true, true, "Algiers"),
+    new Destination(2, "Copenhagen", 56, "Images/Copenhagen.avif", true, true, "Copenhagen"),
     new Destination(3, "Londres", 143, "Images/Londres.avif", true, false, "London"),
     new Destination(4, "Malte", 89, "Images/Malte.avif", false, true, "Valletta"),
-    new Destination(5, "New York", 27, "Images/NewYork.avif", true, false, "New York"),
+    new Destination(5, "NewYork", 27, "Images/NewYork.avif", true, false, "New York"),
     new Destination(6, "Pyongyang", 160, "Images/Pyongyang.avif", false, false, "Pyongyang"),
-    new Destination(7, "Quebec", 103, "Images/quebec.avif", true, true, "Quebec"),
+    new Destination(7, "quebec", 103, "Images/quebec.avif", true, true, "Quebec"), 
     new Destination(8, "Seoul", 147, "Images/Seoul.avif", true, true, "Seoul"),
     new Destination(9, "Shangai", 63, "Images/Shangai.avif", true, false, "Shanghai"),
     new Destination(10, "Tokyo", 198, "Images/Tokyo.avif", true, true, "Tokyo"),
     new Destination(11, "Varsovie", 121, "Images/Varsovie.avif", true, true, "Warsaw"),
-    new Destination(12, "Washington DC", 74, "Images/WashintonDC.avif", true, false, "Washington"),
-    new Destination(13, "Nouvelle Zelande", 32, "Images/NewZeland.avif", true, true, "Wellington")
+    new Destination(12, "WashintonDC", 74, "Images/WashintonDC.avif", true, false, "Washington"), 
+    new Destination(13, "NewZeland", 32, "Images/NewZeland.avif", true, true, "Wellington") 
 ];
 
 // FONCTION POUR RÉCUPÉRER LA MÉTÉO
