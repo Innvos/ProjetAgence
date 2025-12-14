@@ -82,6 +82,23 @@ input[type="submit"].login{
 input[type="submit"].login:hover{background-color: #fff; border:1px solid #55b1df; color:#55b1df; cursor:pointer;}
 input[type="submit"].login:focus{outline: none;}
 
+.switch-msg {
+    text-align: center;
+    color: #bbb;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.switch-msg a {
+    color: #55b1df;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.switch-msg a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
 
 /* FOOTER */
 footer {

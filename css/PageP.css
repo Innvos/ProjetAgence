@@ -141,7 +141,7 @@ footer {
   transition: opacity 0.4s ease;
   padding: 20px;
   text-align: center;
-  pointer-events: none; /* Permet de cliquer à travers vers le lien si besoin, sinon enlever */
+  pointer-events: none;
 }
 
 /* Style du texte dans l'overlay */

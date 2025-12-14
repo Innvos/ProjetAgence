@@ -60,7 +60,6 @@ async function initCarousel() {
         // Appel API Météo (asynchrone)
         const temperature = await getMeteo(dest.villeMeteo);
 
-        // --- A. CRÉATION DU SLIDE (Grande Image) ---
         // Remarque les balises <div class="overlay-info"> pour le survol
         const slideHTML = `
             <div class="mySlides fade">

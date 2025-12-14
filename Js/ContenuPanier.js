@@ -1,14 +1,38 @@
 document.addEventListener("DOMContentLoaded", () => {
     const historyContainer = document.getElementById("historique-container");
-    // Lecture du stockage local
-    const historique = JSON.parse(localStorage.getItem('historiqueCommandes')) || [];
+    const h1Title = document.querySelector(".panier-wrapper h1");
+
+    // Vérifier qui est connecté
+    const currentUser = localStorage.getItem('currentUser');
+    let historique = [];
+
+    if (currentUser) {
+        // Si connecté, on charge l'historique
+        historique = JSON.parse(localStorage.getItem('historique_' + currentUser)) || [];
+        h1Title.textContent = `Historique de ${currentUser}`;
+        
+        // Ajouter un bouton de déconnexion
+        // Tu peux retirer ces 3 lignes si tu ne veux pas de bouton déconnexion ici
+        const logoutBtn = document.createElement("button");
+        logoutBtn.innerText = "Se déconnecter";
+        logoutBtn.onclick = function() {
+            localStorage.removeItem('currentUser');
+            window.location.reload();
+        };
+        h1Title.appendChild(document.createElement("br"));
+        h1Title.appendChild(logoutBtn);
+
+    } else {
+        // Sinon, on charge l'historique invité
+        historique = JSON.parse(localStorage.getItem('historiqueCommandes')) || [];
+    }
 
     if (historique.length === 0) {
         historyContainer.innerHTML = "<p class='empty-msg'>Vous n'avez pas encore effectué de réservation.</p>";
         return;
     }
 
-    // Afficher les commandes (de la plus récente à la plus ancienne)
+    // Afficher les commandes
     historique.reverse().forEach((cmd) => {
         const carteHTML = `
             <div class="commande-card">

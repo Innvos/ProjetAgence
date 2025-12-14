@@ -9,33 +9,51 @@
 <body>
     <script src="Js/header.js"></script>
     <script src="Js/login.js"></script>
-<script src="https://code.jquery.com/jquery-2.1.0.min.js" ></script>
-<div id="formWrapper">
+    <script src="https://code.jquery.com/jquery-2.1.0.min.js" ></script>
+    <div id="formWrapper">
 
-<div id="form">
-<div class="logo">
-    <h1>Wak'full air</h1>
-</div>
+      <div id="form">
+        <div class="logo">
+          <h1>Wak'full air</h1>
+        </div>
 
-    <div class="form-item">
-      <p class="formLabel">Email</p>
-      <input type="email" name="email" id="email" class="form-style" autocomplete="off"/>
+<form id="login-form">
+                <div class="form-item">
+                    <p class="formLabel">Email</p>
+                    <input type="email" id="login-email" class="form-style" autocomplete="off" required/>
+                </div>
+                <div class="form-item">
+                    <p class="formLabel">Mot de passe</p>
+                    <input type="password" id="login-pass" class="form-style" required/>
+                </div>
+                <div class="form-item">
+                    <input type="submit" class="login pull-right" value="Se connecter">
+                    <div class="clear-fix"></div>
+                </div>
+                <p class="switch-msg">Pas encore de compte ? <a href="#" id="go-to-register">S'inscrire</a></p>
+            </form>
+
+            <form id="register-form" style="display:none;">
+                <div class="form-item">
+                    <p class="formLabel">Email</p>
+                    <input type="email" id="reg-email" class="form-style" autocomplete="off" required/>
+                </div>
+                <div class="form-item">
+                    <p class="formLabel">Nouveau mot de passe</p>
+                    <input type="password" id="reg-pass" class="form-style" required/>
+                </div>
+                <div class="form-item">
+                    <input type="submit" class="login pull-right" value="Créer compte">
+                    <div class="clear-fix"></div>
+                </div>
+                <p class="switch-msg">Déjà un compte ? <a href="#" id="go-to-login">Se connecter</a></p>
+            </form>
+
+        </div>
     </div>
-    <div class="form-item">
-      <p class="formLabel">Mot de passe</p>
-      <input type="password" name="password" id="password" class="form-style" />
-      <!-- <div class="pw-view"><i class="fa fa-eye"></i></div> -->
-      <p><a href="#" ><small>Mot de passe oublié ?</small></a></p>  
-    </div>
-    <div class="form-item">
-    <p class="pull-left"><a href="#"><small>S'enregister</small></a></p>
-    <input type="submit" class="login pull-right" value="Login">
-    <div class="clear-fix"></div>
-    </div>
-</div>
-</div>
   <footer>
     <p>&copy; 2025 - Agence de voyage</p>
   </footer>
+  <script src="Js/login.js"></script>
 </body>
 </html>

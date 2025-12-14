@@ -1,6 +1,4 @@
-/* Réservation.css - style du bloc et formulaire */
-
-/* Background global (si tu veux image globale, sinon supprime) */
+/* Background global*/
 .background {
   position: fixed;
   inset: 0;
@@ -11,11 +9,11 @@
 #page-title {
   text-align: center;
   color: white;
-  margin-top: 90px; /* laisse la place au header fixe */
+  margin-top: 90px;
   font-family: 'Courier New', monospace;
 }
 
-/* Bloc de réservation avec image en fond (centrée) */
+/* Bloc de réservation avec image en fond*/
 .reservation-background {
     width: 90%;
     max-width: 960px;
@@ -37,7 +35,7 @@
     overflow: hidden;
 }
 
-/* overlay (assure lisibilité du formulaire) */
+/* overlay*/
 .reservation-background::before {
   content: "";
   position: absolute;

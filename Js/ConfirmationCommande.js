@@ -21,22 +21,28 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="total-price">Total à régler : ${commande.prixTotal} €</div>
     `;
 
-    // 3. Gestion du click "Payer"
+// Clic Paiement
     btnPayer.addEventListener('click', () => {
-        // Récupérer l'historique actuel
-        let historique = JSON.parse(localStorage.getItem('historiqueCommandes')) || [];
+        // 1. Vérifier si un utilisateur est connecté
+        const currentUser = localStorage.getItem('currentUser');
         
-        // Ajouter la date d'achat du jour
+        let storageKey = 'historiqueCommandes'; // Par défaut : invité
+        if (currentUser) {
+            storageKey = 'historique_' + currentUser; // Si connecté : clé perso
+        }
+
+        // 2. Récupérer l'historique correspondant
+        let historique = JSON.parse(localStorage.getItem(storageKey)) || [];
+        
+        // 3. Ajouter la commande
         commande.dateAchat = new Date().toLocaleDateString();
-        
-        // Pousser dans l'historique
         historique.push(commande);
         
-        // Sauvegarder et nettoyer
-        localStorage.setItem('historiqueCommandes', JSON.stringify(historique));
+        localStorage.setItem(storageKey, JSON.stringify(historique));
+        
+        // 4. Nettoyer et rediriger
         localStorage.removeItem('commandeEnCours');
-
-        alert("Paiement validé ! Redirection vers vos commandes.");
+        alert("Paiement validé !");
         window.location.href = 'ContenuPanier.html';
     });
 });
