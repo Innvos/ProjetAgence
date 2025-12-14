@@ -1,4 +1,3 @@
-// Réservation.js — gérer affichage dynamique + calcul de prix + validation
 document.addEventListener("DOMContentLoaded", () => {
   // Récupère les paramètres de l'url
   const params = new URLSearchParams(window.location.search);
