@@ -15,7 +15,6 @@ class Destination {
 }
 
 // DONNÉES
-// 2. DONNÉES
 const destinations = [
     new Destination(1, "Alger", 179, "Images/Alger.avif", true, true, "Algiers"),
     new Destination(2, "Copenhagen", 56, "Images/Copenhagen.avif", true, true, "Copenhagen"),
@@ -32,7 +31,7 @@ const destinations = [
     new Destination(13, "NewZeland", 32, "Images/NewZeland.avif", true, true, "Wellington") 
 ];
 
-// FONCTION POUR RÉCUPÉRER LA MÉTÉO
+// Fonction Méteo
 async function getMeteo(ville) {
     try {
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${ville}&appid=${API_KEY}&units=metric&lang=fr`;

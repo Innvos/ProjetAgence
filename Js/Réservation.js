@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const voyageParam = params.get("name") || params.get("voyage") || ""; 
   const voyageKey = voyageParam.trim();
 
-// Liste des voyages (Mêmes noms EXACTS que les fichiers images et PageP.js)
+// Liste des voyages 
   const lstvoyage = {
     'Alger':        { price: 179, label: 'Alger', petitDejOk: true, enfantsOk: true },
     'Copenhagen':   { price: 56,  label: 'Copenhague', petitDejOk: true, enfantsOk: true },
