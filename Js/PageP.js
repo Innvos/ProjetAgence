@@ -16,7 +16,7 @@ class Destination {
 
 // 2. DONNÉES
 const destinations = [
-    new Destination(1, "Algerie", 179, "Images/Algerie.avif", true, true, "Algiers"),
+    new Destination(1, "Alger", 179, "Images/Alger.avif", true, true, "Algiers"),
     new Destination(2, "Copenhague", 56, "Images/Copenhagen.avif", true, true, "Copenhagen"),
     new Destination(3, "Londres", 143, "Images/Londres.avif", true, false, "London"),
     new Destination(4, "Malte", 89, "Images/Malte.avif", false, true, "Valletta"),
@@ -44,7 +44,7 @@ async function getMeteo(ville) {
     }
 }
 
-// 4. Templates
+// Templates
 const carouselContainer = document.getElementById("carousel-container");
 const thumbnailsContainer = document.getElementById("thumbnails-container");
 
@@ -96,6 +96,26 @@ async function initCarousel() {
 
     // Lancement du Carrousel
     showSlides(slideIndex);
+    // Code pour la grille en bas de page
+    const gridDestinations = document.getElementById("grid-destinations");
+    
+    // On vide la grille avant de remplir
+    if (gridDestinations) {
+        gridDestinations.innerHTML = "";
+        
+        for (const dest of destinations) {
+            const carteHTML = `
+                <div class="grid-item" onclick="window.location.href='Réservation.html?name=${dest.nom}'">
+                    <img src="${dest.image}" alt="${dest.nom}">
+                    <div class="grid-info">
+                        <h3>${dest.nom}</h3>
+                        <p>Dès ${dest.prix}€ / jour</p>
+                    </div>
+                </div>
+            `;
+            gridDestinations.innerHTML += carteHTML;
+        }
+    }
 }
 
 // CARROUSEL
