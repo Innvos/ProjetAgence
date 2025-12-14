@@ -1,11 +1,11 @@
 // Réservation.js — gérer affichage dynamique + calcul de prix + validation
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Récupère param ?name=...
+  // Récupère param
   const params = new URLSearchParams(window.location.search);
   const voyageParam = params.get("name") || params.get("voyage") || ""; // accept both
   const voyageKey = voyageParam.trim();
-  
+
   const lstvoyage = {
     'Algerie': { price: 179, label: 'Algérie' },
     'Copenhagen': { price: 56, label: 'Copenhague' },
