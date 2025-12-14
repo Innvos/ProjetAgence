@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Liste des voyages avec prix et options
   const lstvoyage = {
     'Alger':      { price: 179, label: 'Alger', petitDejOk: true, enfantsOk: true },
-    'Copenhagen':   { price: 56,  label: 'Copenhague', petitDejOk: true, enfantsOk: true },
+    'Copenhagen':   { price: 56,  label: 'Copenhaguen', petitDejOk: true, enfantsOk: true },
     'Londres':      { price: 143, label: 'Londres', petitDejOk: false, enfantsOk: true },
     'Malte':        { price: 89,  label: 'Malte', petitDejOk: true, enfantsOk: false }, 
     'NewYork':      { price: 27,  label: 'New York', petitDejOk: false, enfantsOk: true },

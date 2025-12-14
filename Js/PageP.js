@@ -16,8 +16,8 @@ class Destination {
 
 // 2. DONNÉES
 const destinations = [
-    new Destination(1, "Alger", 179, "Images/Alger.avif", true, true, "Algiers"),
-    new Destination(2, "Copenhague", 56, "Images/Copenhagen.avif", true, true, "Copenhagen"),
+    new Destination(1, "Alger", 179, "Images/Alger.avif", true, true, "Alger"),
+    new Destination(2, "Copenhaguen", 56, "Images/Copenhagen.avif", true, true, "Copenhagen"),
     new Destination(3, "Londres", 143, "Images/Londres.avif", true, false, "London"),
     new Destination(4, "Malte", 89, "Images/Malte.avif", false, true, "Valletta"),
     new Destination(5, "New York", 27, "Images/NewYork.avif", true, false, "New York"),
