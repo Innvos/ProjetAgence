@@ -158,3 +158,71 @@ function showSlides(n) {
 
 // Lancer l'initialisation au chargement
 document.addEventListener('DOMContentLoaded', initCarousel);
+
+// Fonction pour afficher la grille
+function afficherGrille(listeVoyages) {
+    const gridDestinations = document.getElementById("grid-destinations");
+    if (!gridDestinations) return;
+
+    // On vide la grille
+    gridDestinations.innerHTML = "";
+
+    // On recrée les cartes pour la liste donnée
+    let contenuHTML = "";
+    for (const dest of listeVoyages) {
+        contenuHTML += `
+            <div class="grid-item" onclick="window.location.href='Réservation.html?name=${dest.nom}'">
+                <img src="${dest.image}" alt="${dest.nom}">
+                <div class="grid-info">
+                    <h3>${dest.nom}</h3>
+                    <p>Dès ${dest.prix}€ / jour</p>
+                    <div style="font-size:0.8rem; color:#aaa; margin-top:5px;">
+                        ${dest.enfantsOk ? "👶 Enfants OK" : ""} 
+                        ${dest.petitDejOk ? "☕ P-Déj OK" : ""}
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    // Si la liste est vide (aucun résultat)
+    if (contenuHTML === "") {
+        contenuHTML = "<p style='color:white; width:100%; text-align:center;'>Aucune destination ne correspond à vos critères.</p>";
+    }
+
+    gridDestinations.innerHTML = contenuHTML;
+}
+
+// Fonction de filtrage
+function filtrer() {
+    const veutEnfants = document.getElementById("check-enfants").checked;
+    const veutPetitDej = document.getElementById("check-petitdej").checked;
+
+    // On filtre le tableau original 'destinations'
+    const resultats = destinations.filter(dest => {
+        // Si on a coché "Enfants" et que la destination ne les veut pas -> on masque
+        if (veutEnfants && !dest.enfantsOk) return false;
+        
+        // Si on a coché "Petit Déj" et que la destination n'en a pas -> on masque
+        if (veutPetitDej && !dest.petitDejOk) return false;
+
+        // Sinon on garde
+        return true;
+    });
+
+    // On rafraichit l'affichage avec les résultats
+    afficherGrille(resultats);
+}
+
+// 3. Initialisation des écouteurs
+document.addEventListener('DOMContentLoaded', () => {
+    // Affiche tout au chargement
+    afficherGrille(destinations);
+
+    // Écoute les clics sur les cases
+    const checkEnfants = document.getElementById("check-enfants");
+    const checkPetitDej = document.getElementById("check-petitdej");
+
+    if(checkEnfants) checkEnfants.addEventListener("change", filtrer);
+    if(checkPetitDej) checkPetitDej.addEventListener("change", filtrer);
+});
