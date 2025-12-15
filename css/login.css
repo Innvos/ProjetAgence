@@ -1,15 +1,36 @@
 a{color:#58bff6;text-decoration: none;}
 
-a:hover{color:#aaa; }
-.pull-right{float: right;}
-.pull-left{float: left;}
-.clear-fix{clear:both;}
-div.logo{text-align: center; margin: 20px 20px 30px 20px; fill: #566375;}
+a:hover{
+  color:#aaa; 
+}
+
+.pull-right{
+  float: right;
+}
+
+.pull-left{
+  float: left;
+}
+
+.clear-fix{
+  clear:both;
+}
+
+div.logo{
+  text-align: center; 
+  margin: 20px 20px 30px 20px; 
+  fill: #566375;
+}
+
 div.logo svg{
   width:180px;
   height:100px;
 }
-.logo-active{fill: #44aacc !important;}
+
+.logo-active{
+  fill: #44aacc !important;
+}
+
 #formWrapper{
   background: rgba(0,0,0,.2); 
   width:100%; 
@@ -17,31 +38,53 @@ div.logo svg{
   position: absolute; 
   top:0; 
   left:0;
-  transition:all .3s ease;}
-.darken-bg{background: rgba(0,0,0,.5) !important; transition:all .3s ease;}
-
-div#form{
-  position: absolute;
-  width:360px;
-  height:320px;
-  height:auto;
-  background-color: #7f7e7e;
-  margin:auto;
-  border-radius: 5px;
-  padding:20px;
-  left:50%;
-  top:50%;
-  margin-left:-180px;
-  margin-top:-200px;
+  transition:all .3s ease;
 }
-div.form-item{position: relative; display: block; margin-bottom: 20px;}
- input{transition: all .2s ease;}
- input.form-style{
+
+.darken-bg{
+  background: rgba(0,0,0,.5) !important; 
+  transition:all .3s ease;
+}
+
+div#form {
+  position: absolute;
+  width: 600px;  
+  height: auto;
+  background-color: #7f7e7e;
+  margin: auto;
+  border-radius: 8px;
+  padding: 40px; 
+  left: 50%;
+  top: 50%;
+  margin-left: -265px; /* Réajuste le centrage */
+  margin-top: -280px;  /* Réajuste le centrage */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+div.logo1 h1 {
+  font-size: 2.8rem;   /* Texte beaucoup plus grand */
+  color: white;
+  margin-top:0;
+  margin-bottom: 50px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+div.form-item{
+  position: relative; 
+  display: block; 
+  margin-bottom: 40px;
+}
+
+ input{
+  transition: all .2s ease;
+}
+
+ input.form-style {
   color:#8a8a8a;
   display: block;
-  width: 90%;
-  height: 44px;
-  padding: 5px 5%;
+  width: 100%;
+  height: 60px;
+  padding: 5px 20px;
   border:1px solid #ccc;
   -moz-border-radius: 27px;
   -webkit-border-radius: 27px;
@@ -54,22 +97,40 @@ div.form-item{position: relative; display: block; margin-bottom: 20px;}
   font-size: 105%;
   letter-spacing: .8px;
 }
-div.form-item .form-style:focus{outline: none; border:1px solid #58bff6; color:#58bff6; }
+
+div.form-item .form-style:focus{
+  outline: none; 
+  border:1px solid #ffffff; 
+  color:#000000; 
+}
+
 div.form-item p.formLabel {
   position: absolute;
   left:26px;
-  top:2px;
+  top:18px;
   transition:all .4s ease;
-  color:#bbb;}
-.formTop{top:-22px !important; left:26px; background-color: #ffffff; padding:0 5px; font-size: 14px; color:#58bff6 !important;}
-.formStatus{color:#8a8a8a !important;}
+  color:#bbb;
+}
+
+.formTop{
+  top:-22px !important; 
+  left:26px; background-color: #ffffff; 
+  padding:0 5px; font-size: 14px; 
+  color:#58bff6 !important;
+  border-radius: 5px;
+}
+
+.formStatus{
+  color:#8a8a8a !important;
+}
+
 input[type="submit"].login{
   float:right;
-  width: 112px;
-  height: 37px;
+  width: 160px;
+  height: 50px;
   -moz-border-radius: 19px;
   -webkit-border-radius: 19px;
-  border-radius: 19px;
+  border-radius: 25px;
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
@@ -79,9 +140,35 @@ input[type="submit"].login{
   color: #ffffff;
   font-weight: bold;
 }
-input[type="submit"].login:hover{background-color: #fff; border:1px solid #55b1df; color:#55b1df; cursor:pointer;}
-input[type="submit"].login:focus{outline: none;}
 
+input[type="submit"].login:hover{
+  background-color: #fff; 
+  border:1px solid #55b1df; 
+  color:#55b1df; 
+  cursor:pointer;
+}
+
+input[type="submit"].login:focus{
+  outline: none;
+}
+
+.switch-msg {
+    text-align: center;
+    color: #bbb;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.switch-msg a {
+    color: #55b1df;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.switch-msg a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
 
 /* FOOTER */
 footer {

@@ -3,8 +3,117 @@
   text-decoration: none;
 }
 
+.contact-container {
+    margin: 110px auto 50px auto;
+    width: 90%;
+    max-width: 1000px;
+    color: white;
+    text-align: center;
+}
 
-/* FOOTER */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #ddd;
+    margin-bottom: 50px;
+}
+
+/* Grille CSS */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Style des cartes */
+.contact-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 40px 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.contact-card img {
+    width:20%;
+    margin-bottom: 20px;
+}
+
+.contact-card h3 {
+    color: #58bff6;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.contact-card p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Style des cartes */
+.contact-card2 {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 40px 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease;
+}
+
+.contact-card2:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.contact-card2 img {
+    width:40%;
+    margin-bottom: 20px;
+}
+
+.contact-card2 h3 {
+    color: #58bff6;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.contact-card2 p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.link-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #58bff6;
+    color: white;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.link-btn:hover {
+    background-color: #3399cc;
+}
+
+.menu-link {
+    margin-top: 50px;
+}
+
+.menu-link a {
+    color: white;
+    text-decoration: underline;
+    font-size: 1.1rem;
+}
+
 footer {
   margin-top: 40px;
   padding: 20px 0;
