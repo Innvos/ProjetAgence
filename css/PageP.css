@@ -250,3 +250,33 @@ footer {
     font-size: 0.9rem;
     color: #ddd;
 }
+
+/* Style des filtres */
+.filtres-grille {
+    text-align: center;
+    margin: 40px auto 20px auto;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    width: fit-content;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.filtres-grille h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #58bff6;
+}
+
+.filtres-grille label {
+    margin: 0 15px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.filtres-grille input {
+    transform: scale(1.3);
+    margin-right: 8px;
+}
