@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
         h1Title.textContent = `Historique de ${currentUser}`;
         
         // Ajouter un bouton de déconnexion
-        // Tu peux retirer ces 3 lignes si tu ne veux pas de bouton déconnexion ici
+        // Bouton déconnexion
         const logoutBtn = document.createElement("button");
         logoutBtn.innerText = "Se déconnecter";
         logoutBtn.onclick = function() {
