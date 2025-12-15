@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="total-price">Total à régler : ${commande.prixTotal} €</div>
     `;
 
-// Clic Paiement
+// Clic réservation
     btnPayer.addEventListener('click', () => {
         // 1. Vérifier si un utilisateur est connecté
         const currentUser = localStorage.getItem('currentUser');
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         // 4. Nettoyer et rediriger
         localStorage.removeItem('commandeEnCours');
-        alert("Paiement validé !");
+        alert("Commande valider !");
         window.location.href = 'ContenuPanier.html';
     });
 });
