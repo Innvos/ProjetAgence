@@ -1,5 +1,5 @@
 // CLÉ API Météo
-const API_KEY = "e36e685cb5b854d688009249e9176378"; 
+const API_KEY = "0445540b9aced96d07a25148ae4b506d"; 
 
 // CLASSE DESTINATION
 class Destination {
