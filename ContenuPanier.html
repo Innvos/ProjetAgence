@@ -1,20 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/ContenuPanier.css">
     <link rel="stylesheet" href="css/Header.css">
-    <title>Contenu du Panier</title>
+    <title>Mon Panier</title>
 </head>
 <body>
-<div class="background"></div>
+    <div class="background"></div>
     <script src='Js/header.js'></script>
     
     <div class="panier-wrapper">
-        <h1>Historique de vos commandes</h1>
+        <h1>Votre Panier (En attente)</h1>
+        <div id="panier-container" class="history-list">
+            </div>
         
-        <div id="historique-container" class="history-list"></div>
+        <button id="btn-valider-panier" class="btn-retour">
+            Passer la commande
+        </button>
+        <h1>Historique de vos voyages</h1>
+        <div id="historique-container" class="history-list">
+            </div>
 
         <a href="PageP.html" class="btn-retour">Retour au Menu</a>
     </div>

@@ -1,52 +1,89 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const historyContainer = document.getElementById("historique-container");
-    const h1Title = document.querySelector(".panier-wrapper h1");
+    afficherPanier();
+    afficherHistorique();
+});
 
-    // Vérifier qui est connecté
+// 1. PANIER
+function afficherPanier() {
+    const container = document.getElementById("panier-container");
+    const btnValider = document.getElementById("btn-valider-panier");
+    const panier = JSON.parse(localStorage.getItem('monPanier')) || [];
+
+    if (panier.length === 0) {
+        container.innerHTML = "<p style='color:white'>Votre panier est vide.</p>";
+        btnValider.style.display = "none";
+        return;
+    }
+
+    let html = "";
+    let total = 0;
+
+    panier.forEach((item, index) => {
+        total += parseFloat(item.prixTotal);
+        html += `
+            <div class="commande-card">
+                <img src="${item.image}" alt="${item.destination}">
+                <div class="details">
+                    <h3>${item.destination}</h3>
+                    <p>📅 ${item.dateDepart} ➔ ${item.dateRetour}</p>
+                    <p>👥 ${item.adultes} Adultes, ${item.enfants} Enfants</p>
+                </div>
+                <div class="price">${item.prixTotal} €</div>
+                <button onclick="retirerDuPanier(${index})" style="background:#dc3545; color:white; border:none; border-radius:5px; padding:5px 10px; margin-left:15px; cursor:pointer;">X</button>
+            </div>
+        `;
+    });
+
+    html += `<div style="text-align:right; font-size:1.4rem; color:#ffddaa; margin-top:20px;">Total à payer : <strong>${total.toFixed(2)} €</strong></div>`;
+    
+    container.innerHTML = html;
+    btnValider.style.display = "block";
+
+    btnValider.onclick = () => {
+        window.location.href = 'ConfirmationCommande.html';
+    };
+}
+
+// Supprimer un article
+window.retirerDuPanier = function(index) {
+    let panier = JSON.parse(localStorage.getItem('monPanier')) || [];
+    panier.splice(index, 1);
+    localStorage.setItem('monPanier', JSON.stringify(panier));
+    afficherPanier();
+};
+
+// 2. HISTORIQUE (Déjà payé)
+function afficherHistorique() {
+    const container = document.getElementById("historique-container");
+    const h1Title = document.querySelector("h1:nth-of-type(2)");
+
     const currentUser = localStorage.getItem('currentUser');
     let historique = [];
 
     if (currentUser) {
-        // Si connecté, on charge l'historique
         historique = JSON.parse(localStorage.getItem('historique_' + currentUser)) || [];
-        h1Title.textContent = `Historique de ${currentUser}`;
-        
-        // Ajouter un bouton de déconnexion
-        const logoutBtn = document.createElement("button");
-        logoutBtn.innerText = "Se déconnecter";
-        logoutBtn.onclick = function() {
-            localStorage.removeItem('currentUser');
-            window.location.reload();
-        };
-        h1Title.appendChild(document.createElement("br"));
-        h1Title.appendChild(logoutBtn);
-
+        if(h1Title) h1Title.textContent = `Historique de ${currentUser}`;
     } else {
-        // Sinon, on charge l'historique invité
         historique = JSON.parse(localStorage.getItem('historiqueCommandes')) || [];
     }
 
     if (historique.length === 0) {
-        historyContainer.innerHTML = "<p class='empty-msg'>Vous n'avez pas encore effectué de réservation.</p>";
+        container.innerHTML = "<p style='color:gray'>Aucun voyage passé.</p>";
         return;
     }
 
-    // Afficher les commandes
-    historique.reverse().forEach((cmd) => {
-        const carteHTML = `
-            <div class="commande-card">
+    let html = "";
+    historique.reverse().forEach(cmd => {
+        html += `
+            <div class="commande-card" style="opacity: 0.8;">
                 <img src="${cmd.image}" alt="${cmd.destination}">
                 <div class="details">
-                    <h3>${cmd.destination}</h3>
-                    <p>📅 ${cmd.dateDepart} ➔ ${cmd.dateRetour}</p>
-                    <p>👥 ${cmd.adultes} Adultes / ${cmd.enfants} Enfants</p>
-                    <p class="achat-date">Commandé le ${cmd.dateAchat}</p>
+                    <h3>${cmd.destination} <span style="font-size:0.8rem; color:#28a745;">(Payé)</span></h3>
+                    <p>Commandé le : ${cmd.dateAchat || 'Date inconnue'}</p>
                 </div>
-                <div class="price">
-                    ${cmd.prixTotal} €
-                </div>
+                <div class="price">${cmd.prixTotal} €</div>
             </div>
         `;
-        historyContainer.innerHTML += carteHTML;
     });
-});
+    container.innerHTML = html;
+}
