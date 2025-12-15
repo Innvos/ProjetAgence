@@ -5,6 +5,6 @@ const tripStart = params.get("trip-start");
 const tripEnd = params.get("trip-end");
 const nbAdultes = params.get("NbAdultes");
 const nbEnfant = params.get("NbEnfant");
-const ouiNon = params.get("oui/non");
+const petitDej = params.get("petitDej");
 
 console.log(tripStart, tripEnd, nbAdultes, nbEnfant, ouiNon);
