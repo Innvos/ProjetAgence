@@ -1,48 +1,48 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Lecture de la commande temporaire (depuis Réservation)
-    const commandeData = localStorage.getItem('commandeEnCours');
     const recapDiv = document.getElementById('recap-commande');
     const btnPayer = document.getElementById('btn-payer');
     
-    if (!commandeData) {
-        recapDiv.innerHTML = "<p>Aucune commande en attente.</p>";
+    const panier = JSON.parse(localStorage.getItem('monPanier')) || [];
+    
+    if (panier.length === 0) {
+        recapDiv.innerHTML = "<p>Votre panier est vide.</p>";
         btnPayer.style.display = 'none';
         return;
     }
 
-    const commande = JSON.parse(commandeData);
+    let html = "<h2>Récapitulatif de la commande</h2>";
+    let totalGlobal = 0;
 
-    // 2. Affichage du résumé
-    recapDiv.innerHTML = `
-        <h2>${commande.destination}</h2>
-        <p><strong>Dates :</strong> Du ${commande.dateDepart} au ${commande.dateRetour}</p>
-        <p><strong>Voyageurs :</strong> ${commande.adultes} Adulte(s), ${commande.enfants} Enfant(s)</p>
-        <p><strong>Options :</strong> Petit-déjeuner : ${commande.petitDej === 'oui' ? 'Oui' : 'Non'}</p>
-        <div class="total-price">Total à régler : ${commande.prixTotal} €</div>
-    `;
+    panier.forEach(item => {
+        totalGlobal += parseFloat(item.prixTotal);
+        html += `
+            <div style="border-bottom:1px solid #555; padding:10px 0; margin-bottom:10px;">
+                <h3 style="margin:0; color:#58bff6;">${item.destination}</h3>
+                <p style="margin:5px 0;">${item.dateDepart} au ${item.dateRetour}</p>
+                <div style="text-align:right; font-weight:bold;">${item.prixTotal} €</div>
+            </div>
+        `;
+    });
 
-// Clic réservation
+    html += `<h2 style="text-align:right; color:#ffddaa; margin-top:20px;">Total : ${totalGlobal.toFixed(2)} €</h2>`;
+    recapDiv.innerHTML = html;
+
     btnPayer.addEventListener('click', () => {
-        // 1. Vérifier si un utilisateur est connecté
-        const currentUser = localStorage.getItem('currentUser');
+        const user = localStorage.getItem('currentUser');
+        const historyKey = user ? 'historique_' + user : 'historiqueCommandes';
         
-        let storageKey = 'historiqueCommandes'; // Par défaut : invité
-        if (currentUser) {
-            storageKey = 'historique_' + currentUser; // Si connecté : clé perso
-        }
+        let historique = JSON.parse(localStorage.getItem(historyKey)) || [];
+        const dateJour = new Date().toLocaleDateString();
 
-        // 2. Récupérer l'historique correspondant
-        let historique = JSON.parse(localStorage.getItem(storageKey)) || [];
-        
-        // 3. Ajouter la commande
-        commande.dateAchat = new Date().toLocaleDateString();
-        historique.push(commande);
-        
-        localStorage.setItem(storageKey, JSON.stringify(historique));
-        
-        // 4. Nettoyer et rediriger
-        localStorage.removeItem('commandeEnCours');
-        alert("Commande valider !");
+        panier.forEach(item => {
+            item.dateAchat = dateJour;
+            historique.push(item);
+        });
+
+        localStorage.setItem(historyKey, JSON.stringify(historique));
+        localStorage.removeItem('monPanier');
+
+        alert("Paiement accepté ! Merci pour votre commande.");
         window.location.href = 'ContenuPanier.html';
     });
 });
