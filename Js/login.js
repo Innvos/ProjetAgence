@@ -87,11 +87,34 @@ $(document).ready(function(){
             } else {
                 alert("Connexion réussie !");
             }
+            // Vérifier si le profil est complet
+            let profileKey = "profile_" + email;
+            let profile = JSON.parse(localStorage.getItem(profileKey));
 
-            // Redirection vers le menu
-            window.location.href = "PageP.html";
+            if (!profile) {
+                // Pré-remplir l'email
+                $('#info-email').val(email);
+                $('#profile-overlay').fadeIn();
+            } else {
+                window.location.href = "PageP.html";
+            }
         } else {
             alert("Email ou mot de passe incorrect.");
         }
+    });
+    $('#profile-form').submit(function(e){
+        e.preventDefault();
+        const email = $('#info-email').val();
+        const profile = {
+            name: $('#info-name').val(),
+            email: email,
+            address: $('#info-address').val(),
+            age: $('#info-age').val()
+        };
+
+        localStorage.setItem('profile_' + email, JSON.stringify(profile));
+
+        $('#profile-overlay').fadeOut();
+        window.location.href = "PageP.html";
     });
 });
